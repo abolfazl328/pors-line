@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="container">
+        <p class="txt">به پرس لاین خوش امدید!</p>
+        <p class="txt">لطفا از طریق فرم زیر ثبت نام کنید</p>
+        <form action="">
+            <input type="text" placeholder="نام کاربری"><br>
+            <input type="password" placeholder="رمز عبور"><br>
+            <input type="email" placeholder="ادرس ایمیل"><br>
+            <input type="submit" value="ثبت نام">
+        </form>
+        <p class="message">قبلا ثبت نام کرده اید؟ <a href="../login/login.html" class="signin">وارد شدن</a></p>
+    </div>
+    <script>
+    $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+     });
+    </script>
+</body>
+</html>

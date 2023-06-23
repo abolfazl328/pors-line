@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <p class="txt">لطفا وارد شوید</p>
+        <form action="">
+            <input type="text" placeholder="نام کاربری"><br>
+            <input type="password" placeholder="رمز عبور"><br>
+            <input type="submit" value="ورود">
+        </form>
+        <p class="message">ثبت نام نکرده اید؟ <a href="../register/register.html" class="register">ثبت نام</a></p>
+    </div>
+    <script>$('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+     });</script>
+</body>
+</html>
