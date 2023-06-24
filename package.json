@@ -1,0 +1,28 @@
+{
+  "name": "pors-line",
+  "version": "1.0.0",
+  "description": "this a light weaight sever side web side that allows u sign in and creat forms and let other people to access the form and fill it up and store the data in excel files",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abolfazl328/pors-line.git"
+  },
+  "author": "abolfazl328 & SajedehNorouzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abolfazl328/pors-line/issues"
+  },
+  "homepage": "https://github.com/abolfazl328/pors-line#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
