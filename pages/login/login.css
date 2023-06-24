@@ -1,4 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
 @font-face {
 	font-family: "Yekan";
 	src: url("../../fonts/BYekan.ttf") format("truetype"),
@@ -7,16 +6,14 @@
 	font-style: normal;
 	font-weight: normal;
 }
-*{
+* {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	font-family: "Yekan";
 }
-
 body {
 	background-color: #76b852;
-	font-family: "Roboto", sans-serif;
 	padding: 200px;
 }
 p.txt {
