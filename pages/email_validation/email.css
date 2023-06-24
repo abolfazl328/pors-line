@@ -1,9 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
 @font-face {
 	font-family: "Yekan";
-	src: url("../fonts/BYekan.ttf") format("truetype"),
-		url("../fonts/BYekan.eot") format("eot"),
-		url("../fonts/BYekan.woff") format("woff");
+	src: url("../../fonts/BYekan.ttf") format("truetype"),
+		url("../../fonts/BYekan.eot") format("eot"),
+		url("../../fonts/BYekan.woff") format("woff");
 	font-style: normal;
 	font-weight: normal;
 }
