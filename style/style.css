@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "Yekan";
+	src: url("../../fonts/BYekan.ttf") format("truetype"),
+		url("../../fonts/BYekan.eot") format("eot"),
+		url("../../fonts/BYekan.woff") format("woff");
+	font-style: normal;
+	font-weight: normal;
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Yekan";
+}
