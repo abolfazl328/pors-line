@@ -12,3 +12,52 @@
 	margin: 0;
 	font-family: "Yekan";
 }
+body {
+	background-color: #76b852;
+	padding: 120px;
+}
+.txt {
+	font-size: 20px;
+}
+.container1 {
+	width: 400px;
+	background-color: white;
+	text-align: center;
+	margin: auto;
+	padding: 30px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-radius: 10px;
+}
+form input {
+	font-size: 15px;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 5px 20px;
+	padding: 20px 10px;
+	outline: 0;
+	color: #6e6e6e;
+	border-radius: 5px;
+}
+input[type="submit"] {
+	background-color: #4caf50;
+	color: white;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	font-size: 20px;
+}
+.box1 {
+	margin: 10px 5px 30px 5px;
+}
+.message {
+	font-size: 15px;
+}
+a.color {
+	text-decoration: none;
+	color: #43b624;
+}
+::placeholder {
+	color: #adadad;
+	opacity: 1;
+}
