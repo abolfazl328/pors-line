@@ -51,6 +51,9 @@ body {
 	text-align: left;
 	float: left;
 }
+.pad_right_5{
+	margin-right: 5px;
+}
 label {
 	font-size: 15px;
 	padding: 10px;
@@ -73,7 +76,7 @@ input[type="file"] {
 .submit-btn {
 	font-size: 20px;
 	margin: 10px 10px;
-	padding: 5px 30px;
+	padding: 10px 30px;
 	border: none;
 	background-color: #ffb703;
 	border-radius: 10px;
