@@ -15,16 +15,16 @@
 body {
 	background-color: #76b852;
 	font-family: "Roboto", sans-serif;
-	padding: 200px;
+	padding: 100px;
 }
 .question{
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 30px;
 }
 .container {
 	background-color: white;
 	text-align: right;
-	padding: 150px;
+	padding: 120px 150px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	border-radius: 10px;
 }
@@ -34,7 +34,7 @@ body {
 	border-radius: 10px;
 }
 .submit-btn {
-	padding: 15px 60px;
+	padding: 10px 30px;
 	margin: 25px 0;
 	font-size: 25px;
 	background-color: #ffb703;
@@ -42,11 +42,11 @@ body {
 		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 	border: none;
-	border-radius: 20px;
+	border-radius: 10px;
 	cursor: pointer;
 }
 .moving-btn{
-	padding: 10px 20px;
+	padding: 5px 20px;
 	margin: 5px;
 	font-size: 20px;
 	background-color: #ffb703;
@@ -61,7 +61,7 @@ body {
 }
 input[type="file"] {
 	font-size: 20px;
-	padding: 10px;
+	padding: 20px 0 0 0;
 }
 .center{
 	text-align: center;
