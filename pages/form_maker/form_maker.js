@@ -10,8 +10,8 @@ let uploadQuestion = document.querySelector("#upload-button");
 uploadQuestion.addEventListener("click", addUploadQuestion);
 
 function addTextQuestion() {
-  console.log("****");
-  var element = `<div id="txt-question">
+	console.log("****");
+	var element = `<div id="txt-question">
     <div class="row">
         <!-- text qustion -->
         <div class="col-lg-6 right-side">
@@ -34,21 +34,21 @@ function addTextQuestion() {
     </div>
 </div>
 `;
-  document.querySelector("#form-maker").innerHTML += element;
-  question_num += 1;
+	document.querySelector("#form-maker").innerHTML += element;
+	question_num += 1;
 }
 
 function addMultiQuestion() {
-  console.log("44444");
-  var element = `<div id="multi-question">
+	console.log("44444");
+	var element = `<div id="multi-question">
     <div class="row">
         <!-- multi choise question -->
         <div class="col-lg-6 right-side">
-            <label for="q1-multi">متن سوال:</label><br />
+            <label for="q${question_num}-multi">متن سوال:</label><br />
             <input
                 type="text"
-                name="q1-multi"
-                id="q1-multi"
+                name="q${question_num}-multi"
+                id="q${question_num}-multi"
             /><br /><br />
 
             <!-- options: -->
@@ -57,67 +57,69 @@ function addMultiQuestion() {
 
     <div class="row">
         <div class="col-lg-3 right-side">
-            <label for="q1-multi_1">گزینه اول</label><br />
+            <label for="ans${question_num}-multi_1">گزینه اول</label><br />
             <input
                 type="text"
-                name="q1-multi_1"
-                id="q1-multi_1"
+                name="ans${question_num}-multi_1"
+                id="ans${question_num}-multi_1"
             /><br /><br />
         </div>
 
         <div class="col-lg-3 right-side">
-            <label for="q1-multi_2">گزینه دوم</label><br />
+            <label for="ans${question_num}-multi_2">گزینه دوم</label><br />
             <input
                 type="text"
-                name="q1-multi_2"
-                id="q1-multi_2"
+                name="ans${question_num}-multi_2"
+                id="ans${question_num}-multi_2"
             /><br /><br />
         </div>
 
         <div class="col-lg-3 right-side">
-            <label for="q1-multi_3">گزینه سوم</label><br />
+            <label for="ans${question_num}-multi_3">گزینه سوم</label><br />
             <input
                 type="text"
-                name="q1-multi_3"
-                id="q1-multi_3"
+                name="ans${question_num}-multi_3"
+                id="ans${question_num}-multi_3"
             /><br /><br />
         </div>
 
         <div class="col-lg-3 right-side">
-            <label for="q1-multi_4">گزینه چهارم</label><br />
+            <label for="ans${question_num}-multi_4">گزینه چهارم</label><br />
             <input
                 type="text"
-                name="q1-multi_4"
-                id="q1-multi_4"
+                name="ans${question_num}-multi_4"
+                id="ans${question_num}-multi_4"
             /><br /><br />
         </div>
     </div>
 </div>`;
-  document.querySelector("#form-maker").innerHTML += element;
+	document.querySelector("#form-maker").innerHTML += element;
+	question_num += 1;
 }
 
 function addUploadQuestion() {
-  console.log("555");
-  var element = `<div id="upload-question">
+	console.log("555");
+	var element = `<div id="upload-question">
     <div class="row">
         <!-- upload file -->
         <div class="col-lg-4 right-side">
-            <label for="q1-upload">متن سوال:</label><br />
+            <label for="q${question_num}-upload">متن سوال:</label><br />
             <input
                 type="text"
-                name="q1-upload"
-                id="q1-upload"
+                name="q${question_num}-upload"
+                id="q${question_num}-upload"
             /><br /><br />
 
             <form action="/action_page.php">
                 <input
                     type="file"
-                    id="myFile"
-                    name="upload-file"
+                    id="ans${question_num}-upload"
+                    name="ans${question_num}-upload"
                 /><br />
             </form>
         </div>
     </div>
 </div>`;
-  document.querySelector("#form-maker").innerHTML += element;
+	document.querySelector("#form-maker").innerHTML += element;
+	question_num += 1;
 }
