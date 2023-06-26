@@ -13,7 +13,7 @@
 	font-family: "Yekan";
 }
 body {
-	background-color: #76b852;
+	background-color: #ffbf69;
 	padding: 120px;
 }
 .txt {
@@ -40,7 +40,7 @@ form input {
 	border-radius: 5px;
 }
 input[type="submit"] {
-	background-color: #4caf50;
+	background-color: #FF9F1C;
 	color: white;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
@@ -55,7 +55,7 @@ input[type="submit"] {
 }
 a.color {
 	text-decoration: none;
-	color: #43b624;
+	color: #FF9F1C;
 }
 ::placeholder {
 	color: #adadad;
