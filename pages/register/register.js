@@ -5,7 +5,6 @@ function validateform() {
 
 	if (password == null || rePassword == "" || email == "") {
 		alert("لطفا همه ی فیلد ها را پر کنید");
-		location.reload();
 		// return false;
 	} else if (password.length < 6) {
 		alert("رمز عبور باید از 6 کاراکتر بیشتر باشد");
@@ -16,8 +15,6 @@ function validateform() {
 	} else if (password != rePassword) {
 		alert("رمز عبور وارد شده با تکرار ان مطابقت ندارد");
 		// return false;
-	} else {
-		window.location.href = "https://www.google.com";
 	}
 }
 let submitButton = document.register.submit;

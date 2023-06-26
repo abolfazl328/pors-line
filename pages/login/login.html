@@ -11,9 +11,17 @@
 		<div class="container1">
 			<p class="txt box1">لطفا وارد شوید</p>
 			<form action="/auth/login" method="post">
-				<input type="email" placeholder="ادرس ایمیل" autofocus /><br />
-				<input type="password" placeholder="رمز عبور" min="8" /><br />
-				<input type="submit" value="ورود" />
+				<input name="email" type="email" placeholder="ادرس ایمیل" autofocus /><br />
+				<input name="password" type="password" placeholder="رمز عبور" min="8" /><br />
+				<button
+					name="submit"
+					type="submit"
+					value="ثبت نام"
+					id="submitButton"
+					class="submit-btn"
+				>
+					ثبت نام</button
+				><br /><br /><br />
 			</form>
 			<p class="message">
 				ثبت نام نکرده اید؟
