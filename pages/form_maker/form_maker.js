@@ -44,7 +44,7 @@ function addTextQuestion() {
         </div>
     </fieldset>
 `;
-	document.querySelector("#form-maker").innerHTML += element;
+	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
 }
 
@@ -107,7 +107,7 @@ function addMultiQuestion() {
     </div>
     </fieldset>`;
 
-	document.querySelector("#form-maker").innerHTML += element;
+	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
 }
 
@@ -138,6 +138,6 @@ function addUploadQuestion() {
     </div>
     </fieldset>`;
 
-	document.querySelector("#form-maker").innerHTML += element;
+	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
 }

@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ساختن فرم</title>
-    <link rel="stylesheet" href="/form_maker.css" />
-    <link rel="stylesheet" href="/responsive.css" />
-  </head>
-  <body>
-    <div class="container">
-      <p class="message">
-        برای ساختن فرم، لطفا یکی از موارد زیر را انتخاب کنید
-      </p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ساختن فرم</title>
+		<link rel="stylesheet" href="/form_maker.css" />
+		<link rel="stylesheet" href="/responsive.css" />
+	</head>
+	<body>
+		<div class="container">
+			<p class="message">
+				برای ساختن فرم، لطفا یکی از موارد زیر را انتخاب کنید
+			</p>
 
-      <div class="row">
-        <div class="col-lg-4">
-          <button class="btn hovering1" id="textButton">
-            متنی با پاسخ کوتاه
-          </button>
-        </div>
-        <div class="col-lg-4">
-          <button class="btn hovering1" id="multi-button">چند گزینه ای</button>
-        </div>
-        <div class="col-lg-4">
-          <button class="btn hovering1" id="upload-button">آپلود فایل</button>
-        </div>
-      </div>
+			<div class="row">
+				<div class="col-lg-4">
+					<button class="btn hovering1" id="textButton">
+						متنی با پاسخ کوتاه
+					</button>
+				</div>
+				<div class="col-lg-4">
+					<button class="btn hovering1" id="multi-button">
+						چند گزینه ای
+					</button>
+				</div>
+				<div class="col-lg-4">
+					<button class="btn hovering1" id="upload-button">
+						آپلود فایل
+					</button>
+				</div>
+			</div>
 
-      <div id="form-maker">
-        <form action="" id="formTag"></form>
-      </div>
+			<div>
+				<form action="" id="formTag"></form>
+			</div>
 
-      <!-- form maker codes avalible in test.html -->
+			<!-- form maker codes avalible in test.html -->
 
-      <br /><br />
+			<br /><br />
 
-
-      <div id="enteshar"></div>
-    </div>
-    <script src="/form_maker.js"></script>
-  </body>
+			<div id="enteshar"></div>
+		</div>
+		<script src="/form_maker.js"></script>
+	</body>
 </html>
