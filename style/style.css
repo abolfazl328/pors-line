@@ -39,13 +39,19 @@ form input {
 	color: #6e6e6e;
 	border-radius: 5px;
 }
-input[type="submit"] {
-	background-color: #FF9F1C;
-	color: white;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
-	cursor: pointer;
+.submit-btn {
 	font-size: 20px;
+	/* margin: 10px 10px; */
+	padding: 10px 140px;
+	border: none;
+	background-color: #ff9f1c;
+	border-radius: 10px;
+	cursor: pointer;
+	/* float: left; */
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+	/* text-align: center; */
 }
 .box1 {
 	margin: 10px 5px 30px 5px;
