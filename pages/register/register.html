@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>register</title>
-		<link rel="stylesheet" href="../../style/style.css" />
-	</head>
-	<body>
-		<div class="container1">
-			<div class="box1">
-				<p class="txt">به فرم ساز خوش امدید!</p>
-				<p class="txt">لطفا از طریق فرم زیر ثبت نام کنید</p>
-			</div>
-			<form name="register" action="/auth/email_validation" method="post">
-				<input
-					name="email"
-					type="email"
-					placeholder="ادرس ایمیل"
-					autofocus
-				/><br />
-				<input
-					name="pass"
-					type="password"
-					placeholder="رمز عبور"
-					id="pass"
-					min="6"
-				/><br />
-				<input
-					name="repass"
-					type="password"
-					placeholder="تکرار رمز عبور"
-					id="repass"
-					min="6"
-				/><br />
-				<button
-					name="submit"
-					type="submit"
-					value="ثبت نام"
-					id="submitButton"
-					class="submit-btn"
-				>
-					ثبت نام</button
-				><br /><br /><br />
-			</form>
-			<p class="message">
-				قبلا ثبت نام کرده اید؟
-				<a href="../auth/login" class="color">وارد شدن</a>
-			</p>
-		</div>
-		<script src="/register.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+  </head>
+  <body>
+    <div class="container1">
+      <div class="box1">
+        <p class="txt">به فرم ساز خوش امدید!</p>
+        <p class="txt">لطفا از طریق فرم زیر ثبت نام کنید</p>
+      </div>
+      <form name="register" action="/auth/register" method="post">
+        <input
+          name="email"
+          type="email"
+          placeholder="ادرس ایمیل"
+          autofocus
+        /><br />
+        <input
+          name="pass"
+          type="password"
+          placeholder="رمز عبور"
+          id="pass"
+          min="6"
+        /><br />
+        <input
+          name="repass"
+          type="password"
+          placeholder="تکرار رمز عبور"
+          id="repass"
+          min="6"
+        /><br />
+        <button
+          name="submit"
+          type="submit"
+          value="ثبت نام"
+          id="submitButton"
+          class="submit-btn"
+        >
+          ثبت نام</button
+        ><br /><br /><br />
+      </form>
+      <p class="message">
+        قبلا ثبت نام کرده اید؟
+        <a href="../auth/login" class="color">وارد شدن</a>
+      </p>
+    </div>
+    <script src="/register.js"></script>
+  </body>
 </html>
