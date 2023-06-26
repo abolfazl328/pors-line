@@ -1,11 +1,3 @@
-let pass = document.querySelector("#pass");
-
-let repass = document.querySelector("#repass");
-
-if (pass.innerHTML !== repass.innerHTML) {
-	window.alert("رمز عبور وارد شده با تکرار ان مطابقت ندارد");
-}
-
 let submitButton = document.querySelector("#submitButton");
 submitButton.addEventListener("click", validateform);
 
@@ -19,7 +11,6 @@ function validateform() {
 
 	if (password == null || rePassword == "" || email == "") {
 		alert("لطفا همه ی فیلد ها را پر کنید");
-		location.reload();
 		return false;
 	} else if (password.length < 6) {
 		alert("رمز عبور باید از 6 کاراکتر بیشتر باشد");

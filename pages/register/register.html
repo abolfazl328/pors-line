@@ -15,22 +15,32 @@
 			</div>
 			<form name="register" action="/auth/email_validation" method="post">
 				<input
-          name="pass"
+					name="email"
+					type="email"
+					placeholder="ادرس ایمیل"
+					autofocus
+				/><br />
+				<input
+					name="pass"
 					type="password"
 					placeholder="رمز عبور"
 					id="pass"
-					autofocus
-					min="8"
+					min="6"
 				/><br />
 				<input
-          name="repass"
+					name="repass"
 					type="password"
 					placeholder="تکرار رمز عبور"
 					id="repass"
-					min="8"
+					min="6"
 				/><br />
-				<input  name="email" type="email" placeholder="ادرس ایمیل" /><br />
-				<input  name="submit" type="submit" value="ثبت نام" id="submitButton"/>
+
+				<input
+					name="submit"
+					type="submit"
+					value="ثبت نام"
+					id="submitButton"
+				/>
 			</form>
 			<p class="message">
 				قبلا ثبت نام کرده اید؟

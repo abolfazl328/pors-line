@@ -13,7 +13,7 @@
 	font-family: "Yekan";
 }
 body {
-	background-color: #FFBF69;
+	background-color: #ffbf69;
 	padding: 80px;
 }
 .message {
@@ -31,7 +31,7 @@ body {
 .btn {
 	padding: 10px 40px;
 	font-size: 22px;
-	background-color: #FF9F1C;
+	background-color: #ff9f1c;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
 		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -51,7 +51,7 @@ body {
 	text-align: left;
 	float: left;
 }
-.pad_right_5{
+.pad_right_5 {
 	margin-right: 5px;
 }
 label {
@@ -78,7 +78,7 @@ input[type="file"] {
 	margin: 10px 10px;
 	padding: 10px 30px;
 	border: none;
-	background-color: #FF9F1C;
+	background-color: #ff9f1c;
 	border-radius: 10px;
 	cursor: pointer;
 	float: left;
@@ -94,12 +94,11 @@ fieldset {
 	padding-bottom: 0.625em;
 	padding-left: 0.75em;
 	padding-right: 0.75em;
-    border: none;
-    border-top: 2px solid gainsboro;
-
+	border: none;
+	border-top: 2px solid gainsboro;
 }
 legend {
-    color: gray;
-    padding: 5px 7px;
-    /* text-align: right; */
-} 
+	color: gray;
+	padding: 5px 7px;
+	/* text-align: right; */
+}

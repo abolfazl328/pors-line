@@ -9,6 +9,13 @@ multiQuestion.addEventListener("click", addMultiQuestion);
 let uploadQuestion = document.querySelector("#upload-button");
 uploadQuestion.addEventListener("click", addUploadQuestion);
 
+let form = document.querySelector("#formTag");
+
+if (form.innerHTML !== null) {
+	var btn = `<input class="submit-btn" type="submit" value="انتشار" />`;
+	document.querySelector("#enteshar").innerHTML = btn;
+}
+
 function addTextQuestion() {
 	var element = `
     <fieldset>
