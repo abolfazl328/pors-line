@@ -9,11 +9,12 @@ multiQuestion.addEventListener("click", addMultiQuestion);
 let uploadQuestion = document.querySelector("#upload-button");
 uploadQuestion.addEventListener("click", addUploadQuestion);
 
-let form = document.querySelector("#formTag");
-
-if (form.innerHTML !== null) {
-	var btn = `<input class="submit-btn" type="submit" value="انتشار" />`;
-	document.querySelector("#enteshar").innerHTML = btn;
+function checkEmpty() {
+	let form = document.querySelector("#formTag");
+	if (form.childNodes.length !== 0) {
+		var btn = `<input class="submit-btn" type="submit" value="انتشار" />`;
+		document.querySelector("#enteshar").innerHTML = btn;
+	}
 }
 
 function addTextQuestion() {
@@ -46,6 +47,7 @@ function addTextQuestion() {
 `;
 	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
+	checkEmpty();
 }
 
 function addMultiQuestion() {
@@ -109,6 +111,7 @@ function addMultiQuestion() {
 
 	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
+	checkEmpty();
 }
 
 function addUploadQuestion() {
@@ -140,4 +143,5 @@ function addUploadQuestion() {
 
 	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
+	checkEmpty();
 }
