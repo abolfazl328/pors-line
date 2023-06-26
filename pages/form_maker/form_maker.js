@@ -10,37 +10,42 @@ let uploadQuestion = document.querySelector("#upload-button");
 uploadQuestion.addEventListener("click", addUploadQuestion);
 
 function addTextQuestion() {
-	console.log("****");
-	var element = `<div id="txt-question">
-    <div class="row">
-        <!-- text qustion -->
-        <div class="col-lg-6 right-side">
-            <label for="q${question_num}-txt">متن سوال:</label><br />
-            <input
-                type="text"
-                name="q${question_num}-txt"
-                id="q${question_num}-txt"
-            /><br /><br />
-            <label for="ans${question_num}-txt"></label>
-            <textarea
-                class="right-side pad_right_5"
-                name="ans${question_num}-txt"
-                id="ans${question_num}-txt"
-                cols="105"
-                rows="2"
-                disabled
-            ></textarea>
+	var element = `
+    <fieldset>
+		<legend>متنی با پاسخ کوتاه</legend>
+        <div id="txt-question">
+        <div class="row">
+            <!-- text qustion -->
+            <div class="col-lg-6 right-side">
+                <label for="q${question_num}-txt">متن سوال:</label><br />
+                <input
+                    type="text"
+                    name="q${question_num}-txt"
+                    id="q${question_num}-txt"
+                /><br /><br />
+                <label for="ans${question_num}-txt"></label>
+                <textarea
+                    class="right-side pad_right_5"
+                    name="ans${question_num}-txt"
+                    id="ans${question_num}-txt"
+                    cols="105"
+                    rows="2"
+                    disabled
+                ></textarea>
+            </div>
         </div>
-    </div>
-</div>
+        </div>
+    </fieldset>
 `;
 	document.querySelector("#form-maker").innerHTML += element;
 	question_num += 1;
 }
 
 function addMultiQuestion() {
-	console.log("44444");
-	var element = `<div id="multi-question">
+	var element = `
+    <fieldset>
+    <legend>چند گزینه ای</legend>
+    <div id="multi-question">
     <div class="row">
         <!-- multi choise question -->
         <div class="col-lg-6 right-side">
@@ -92,14 +97,18 @@ function addMultiQuestion() {
             /><br /><br />
         </div>
     </div>
-</div>`;
+    </div>
+    </fieldset>`;
+
 	document.querySelector("#form-maker").innerHTML += element;
 	question_num += 1;
 }
 
 function addUploadQuestion() {
-	console.log("555");
-	var element = `<div id="upload-question">
+	var element = `
+    <fieldset>
+    <legend>آپلود فایل</legend>
+    <div id="upload-question">
     <div class="row">
         <!-- upload file -->
         <div class="col-lg-4 right-side">
@@ -119,7 +128,9 @@ function addUploadQuestion() {
             </form>
         </div>
     </div>
-</div>`;
+    </div>
+    </fieldset>`;
+
 	document.querySelector("#form-maker").innerHTML += element;
 	question_num += 1;
 }
