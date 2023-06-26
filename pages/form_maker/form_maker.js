@@ -1,4 +1,4 @@
-let question_num = 1;
+let question_num = 0;
 
 let textQuestion = document.querySelector("#textButton");
 textQuestion.addEventListener("click", addTextQuestion);
@@ -16,7 +16,11 @@ function checkEmpty() {
 		document.querySelector("#enteshar").innerHTML = btn;
 	}
 }
-
+function updateHiddenValue() {
+	var number = document.formMaker.hiddenInput.value;
+	number = question_num;
+	console.log(number);
+}
 function addTextQuestion() {
 	var element = `
     <fieldset>
@@ -48,6 +52,7 @@ function addTextQuestion() {
 	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
 	checkEmpty();
+    updateHiddenValue();
 }
 
 function addMultiQuestion() {
@@ -112,6 +117,7 @@ function addMultiQuestion() {
 	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
 	checkEmpty();
+    updateHiddenValue();
 }
 
 function addUploadQuestion() {
@@ -145,4 +151,5 @@ function addUploadQuestion() {
 	document.querySelector("#formTag").innerHTML += element;
 	question_num += 1;
 	checkEmpty();
+    updateHiddenValue();
 }

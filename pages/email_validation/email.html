@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>email validation</title>
-    <link rel="stylesheet" href="../../style/style.css" />
-  </head>
-  <body>
-    <div class="container1">
-      <form action="/auth/email_validator" method="post">
-        <p class="txt box1">لطفا کد ارسالی به ایمیل خود را وارد کنید</p>
-        <input name="number" type="text" autofocus/><br />
-        <button
-          name="submit"
-          type="submit"
-          value="ثبت نام"
-          id="submitButton"
-          class="submit-btn"
-        >
-          ثبت نام</button
-        ><br /><br /><br />
-      </form>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>email validation</title>
+		<link rel="stylesheet" href="../../style/style.css" />
+	</head>
+	<body>
+		<div class="container1">
+			<form action="/auth/email_validator" method="post">
+				<p class="txt box1">لطفا کد ارسالی به ایمیل خود را وارد کنید</p>
+				<input name="code" type="text" autofocus /><br />
+				<button
+					name="submit"
+					type="submit"
+					id="submitButton"
+					class="submit-btn"
+				>
+					ارسال</button
+				><br /><br /><br />
+			</form>
+		</div>
+	</body>
 </html>
