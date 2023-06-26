@@ -1,3 +1,5 @@
+let question_num = 1;
+
 let textQuestion = document.querySelector("#textButton");
 textQuestion.addEventListener("click", addTextQuestion);
 
@@ -8,22 +10,22 @@ let uploadQuestion = document.querySelector("#upload-button");
 uploadQuestion.addEventListener("click", addUploadQuestion);
 
 function addTextQuestion() {
-	console.log("****");
-	var element = `<div id="txt-question">
+  console.log("****");
+  var element = `<div id="txt-question">
     <div class="row">
         <!-- text qustion -->
         <div class="col-lg-6 right-side">
-            <label for="q1-txt">متن سوال:</label><br />
+            <label for="q${question_num}-txt">متن سوال:</label><br />
             <input
                 type="text"
-                name="q1-txt"
-                id="q1-txt"
+                name="q${question_num}-txt"
+                id="q${question_num}-txt"
             /><br /><br />
-            <label for="ans1-txt"></label>
+            <label for="ans${question_num}-txt"></label>
             <textarea
                 class="right-side pad_right_5"
-                name="ans1-txt"
-                id="ans1-txt"
+                name="ans${question_num}-txt"
+                id="ans${question_num}-txt"
                 cols="105"
                 rows="2"
                 disabled
@@ -32,12 +34,13 @@ function addTextQuestion() {
     </div>
 </div>
 `;
-	document.querySelector("#form-maker").innerHTML += element;
+  document.querySelector("#form-maker").innerHTML += element;
+  question_num += 1;
 }
 
 function addMultiQuestion() {
-	console.log("44444");
-	var element = `<div id="multi-question">
+  console.log("44444");
+  var element = `<div id="multi-question">
     <div class="row">
         <!-- multi choise question -->
         <div class="col-lg-6 right-side">
@@ -90,12 +93,12 @@ function addMultiQuestion() {
         </div>
     </div>
 </div>`;
-	document.querySelector("#form-maker").innerHTML += element;
+  document.querySelector("#form-maker").innerHTML += element;
 }
 
 function addUploadQuestion() {
-	console.log("555");
-    var element = `<div id="upload-question">
+  console.log("555");
+  var element = `<div id="upload-question">
     <div class="row">
         <!-- upload file -->
         <div class="col-lg-4 right-side">
@@ -115,6 +118,6 @@ function addUploadQuestion() {
             </form>
         </div>
     </div>
-</div>`
-    document.querySelector("#form-maker").innerHTML += element;
+</div>`;
+  document.querySelector("#form-maker").innerHTML += element;
 }
