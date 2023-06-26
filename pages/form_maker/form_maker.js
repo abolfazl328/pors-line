@@ -17,10 +17,8 @@ function checkEmpty() {
 	}
 }
 function updateHiddenValue() {
-	var number = document.querySelector("#hiddenInput");
-	var inputValue = number.value;
-	inputValue = question_num;
-	console.log(inputValue);
+	document.querySelector("#hiddenInput").value = question_num;
+	
 }
 function addTextQuestion() {
 	var element = `
