@@ -54,6 +54,9 @@ body {
 .pad_right_5 {
 	margin-right: 5px;
 }
+.width50{
+	width: 50%;
+}
 label {
 	font-size: 15px;
 	padding: 10px;
@@ -69,10 +72,10 @@ input[type="text"] {
 	color: #6e6e6e;
 	border-radius: 5px;
 }
-input[type="file"] {
+/* input[type="file"] {
 	font-size: 20px;
 	padding: 10px;
-}
+} */
 .submit-btn {
 	font-size: 20px;
 	margin: 10px 10px;
