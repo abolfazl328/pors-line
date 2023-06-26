@@ -12,7 +12,7 @@ uploadQuestion.addEventListener("click", addUploadQuestion);
 function checkEmpty() {
 	let form = document.querySelector("#formTag");
 	if (form.childNodes.length !== 0) {
-		var btn = `<button type="submit" class="submit-btn" value="انتشار" ></button>`;
+		var btn = `<button type="submit" class="submit-btn" >انتشار</button>`;
 		document.querySelector("#enteshar").innerHTML = btn;
 	}
 }
