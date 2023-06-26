@@ -12,7 +12,7 @@ uploadQuestion.addEventListener("click", addUploadQuestion);
 function checkEmpty() {
 	let form = document.querySelector("#formTag");
 	if (form.childNodes.length !== 0) {
-		var btn = `<input class="submit-btn" type="submit" value="انتشار" />`;
+		var btn = `<button type="submit" class="submit-btn" value="انتشار" ></button>`;
 		document.querySelector("#enteshar").innerHTML = btn;
 	}
 }
@@ -134,6 +134,7 @@ function addUploadQuestion() {
                     type="file"
                     id="ans${question_num}-upload"
                     name="ans${question_num}-upload"
+                    disabled
                 /><br />
             </form>
         </div>
