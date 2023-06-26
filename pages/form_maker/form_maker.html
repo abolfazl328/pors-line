@@ -23,15 +23,22 @@
         <div class="col-lg-4">
           <button class="btn hovering1" id="multi-button">چند گزینه ای</button>
         </div>
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4">
           <button class="btn hovering1" id="upload-button">آپلود فایل</button>
-        </div>
+        </div> -->
       </div>
 
       <div>
         <form action="/form/form-maker" method="post" id="formTag">
 			<div>
 				<input name="hiddenInput" type="hidden" value="" >
+			</div>
+			<div class="row">
+				<div class="">
+					<label for="form-name">نام فرم</label><br />
+					<input type="text" name="form-name" /><br />
+				</div>
+				<br /><br />
 			</div>
 			<div id="formTag"></div>
 			<div id="enteshar"></div>
