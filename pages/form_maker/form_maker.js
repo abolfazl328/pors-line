@@ -18,7 +18,6 @@ function checkEmpty() {
 }
 function updateHiddenValue() {
 	document.querySelector("#hiddenInput").value = question_num;
-	
 }
 function addTextQuestion() {
 	var element = `
@@ -39,7 +38,7 @@ function addTextQuestion() {
                     class="right-side pad_right_5"
                     name="ans${question_num}-txt"
                     id="ans${question_num}-txt"
-                    cols="105"
+                    cols="60"
                     rows="2"
                     disabled
                 ></textarea>
