@@ -17,7 +17,7 @@
                 <p class="question"><%=question.question%></p>
                 <textarea
                     class="txt-answer"
-                    name="ans1-txt"
+                    name="<%=question.question%>"
                     id=""
                     cols="50"
                     rows="5"
@@ -34,25 +34,25 @@
                 <div class="row">
                 <div class="col-lg-3">
                     <label class="container1"><%=question.values[0]%>
-                    <input type="radio" name="radio" />
+                    <input type="radio" name="<%=question.question%>" />
                     <span class="checkmark right"></span>
                     </label>
                 </div>
                 <div class="col-lg-3">
                     <label class="container1"><%=question.values[1]%>
-                    <input type="radio" name="radio" />
+                    <input type="radio" name="<%=question.question%>" />
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="col-lg-3">
                     <label class="container1"><%=question.values[2]%>
-                    <input type="radio" name="radio" />
+                    <input type="radio" name="<%=question.question%>" />
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="col-lg-3">
                     <label class="container1"><%=question.values[3]%>
-                    <input type="radio" name="radio" />
+                    <input type="radio" name="<%=question.question%>" />
                     <span class="checkmark"></span>
                     </label>
                 </div>
