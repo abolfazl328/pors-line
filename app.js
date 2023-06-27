@@ -59,9 +59,9 @@ app.use(express.static(path.join(__dirname, "responsive")));
 //   next();
 // });
 
-app.use("/auth", authRouter);
+app.use("/", homeRouter);
 
-app.use("/home", homeRouter);
+app.use("/auth", authRouter);
 
 app.use("/form", formMakerRouter);
 
