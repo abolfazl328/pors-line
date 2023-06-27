@@ -25,13 +25,13 @@ li a {
 	color: inherit;
 }
 li a:hover {
-	color: #FF9F1C;
+	color: #ff9f1c;
 }
 .submit-btn {
 	padding: 5px 20px;
 	/* margin-top: 5px; */
 	font-size: 20px;
-	background-color: #FF9F1C;
+	background-color: #ff9f1c;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
@@ -43,7 +43,7 @@ li a:hover {
 	padding: 10px 35px;
 	/* margin-top: 5px; */
 	font-size: 25px;
-	background-color: #FF8800;
+	background-color: #ff8800;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
@@ -62,8 +62,8 @@ li a:hover {
 	background-blend-mode: multiply;
 	padding: 150px 0px 0px 0px;
 }
-.img1{
-    height: 400px;
+.img1 {
+	height: 400px;
 }
 .center {
 	text-align: center;
@@ -83,11 +83,11 @@ li a:hover {
 .font-size20 {
 	font-size: 20px;
 }
-.box1{
-    padding: 80px;
+.box1 {
+	padding: 80px;
 }
-.box2{
-    padding: 50px 80px 0 80px;
+.box2 {
+	padding: 50px 80px 0 80px;
 }
 .orange {
 	color: #ff7b00;
@@ -157,7 +157,7 @@ li a:hover {
 }
 
 .footer1 {
-	background-color: #F7F8FA;
+	background-color: #f7f8fa;
 }
 .black-color {
 	color: #000000;
@@ -168,6 +168,10 @@ li a:hover {
 	float: left;
 }
 .footer2 {
-	background-color: #F7F8FA;
+	background-color: #f7f8fa;
 	margin-top: -20px;
+}
+a {
+	text-decoration: none;
+	color: #000000;
 }
