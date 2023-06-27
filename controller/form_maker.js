@@ -1,5 +1,7 @@
 const path = require("path");
 const User = require("../models/user");
+const Form = require("../models/form");
+const xl = require("excel4node");
 
 exports.getFormMaker = (req, res, next) => {
   res.sendFile(
@@ -13,7 +15,7 @@ exports.postFormMaker = (req, res, next) => {
   for (let i = 0; i < num; i++) {
     let question = {};
     if (req.body[`q${i}-multi`]) {
-      question[`question${i}`] = req.body[`q${i}-multi`];
+      question[`question`] = req.body[`q${i}-multi`];
       question["type"] = "multi";
       question["values"] = [
         req.body[`ans${i}-multi_1`],
@@ -22,7 +24,7 @@ exports.postFormMaker = (req, res, next) => {
         req.body[`ans${i}-multi_4`],
       ];
     } else if (req.body[`q${i}-txt`]) {
-      question[`question${i}`] = req.body[`q${i}-txt`];
+      question[`question`] = req.body[`q${i}-txt`];
       question["type"] = "txt";
     }
     form.push(question);
@@ -36,21 +38,36 @@ exports.postFormMaker = (req, res, next) => {
         form_structure: JSON.stringify(form),
       });
     })
-    .then(() => {
+    .then((form) => {
+      var wb = new xl.Workbook();
+      var style = wb.createStyle({
+        font: {
+          color: "#000000",
+          size: 12,
+        },
+      });
+      var ws = wb.addWorksheet("Sheet 1");
+      let coulem = 1;
+      for (let i of JSON.parse(form.form_structure)) {
+        console.log(i);
+        console.log(i[`question`]);
+        ws.cell(1, coulem).string(i[`question`]).style(style);
+        coulem += 1;
+      }
+      wb.write(path.join(__dirname, "../", "excel", `${form.id}.xlsx`));
       res.redirect("/home");
     })
     .catch((err) => {
       console.log(err);
     });
-  //
+};
 
-  // req.session.user
-  //   .creatForm({
-  //     name: req.body["form-name"],
-  //     form_structure: JSON.stringify(form),
-  //   })
-  //   .then(() => {
-  //     res.redirect("/home");
-  //   })
-  //   .catch((err) => console.log(err));
+exports.getSurvay = (req, res, next) => {
+  Form.findOne({ where: { id: Number(req.params.formId) } })
+    .then((form) => {
+      res.render("survay ui", {
+        questions: JSON.parse(form.form_structure),
+      });
+    })
+    .catch((err) => console.log(err));
 };

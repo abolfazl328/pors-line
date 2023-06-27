@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>txt-q</title>
+    <link rel="stylesheet" href="/survay-ui.css" />
+    <link rel="stylesheet" href="/responsive.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row col-lg-12"> 
+        <% for(question of questions) { %>
+            <%if(question.type == "txt"){%>
+                <p class="question"><%=question.question%></p>
+                <textarea
+                    class="txt-answer"
+                    name="ans1-txt"
+                    id=""
+                    cols="50"
+                    rows="5"
+                    placeholder="محل درج پاسخ..."
+                    autofocus
+                ></textarea
+                ><br /><br />
+                <hr />
+                <br />
+            <%}%>
+            <%if(question.type == "multi"){%>
+                <p class="question"><%=question.question%></p>
+
+                <div class="row">
+                <div class="col-lg-3">
+                    <label class="container1"><%=question.values[0]%>
+                    <input type="radio" name="radio" />
+                    <span class="checkmark right"></span>
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="container1"><%=question.values[1]%>
+                    <input type="radio" name="radio" />
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="container1"><%=question.values[2]%>
+                    <input type="radio" name="radio" />
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="container1"><%=question.values[3]%>
+                    <input type="radio" name="radio" />
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </div>
+            <%}%>
+        <%}%>
+      </div>
+
+      <button class="submit-btn1 hovering1">تایید</button><br />
+    </div>
+  </body>
+</html>

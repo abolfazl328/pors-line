@@ -28,6 +28,9 @@ const sessionStore = new MySQLStore({}, connection);
 
 const app = express();
 
+app.set("view engine", "ejs");
+app.set("views", "survay ui");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
   session({
@@ -39,6 +42,7 @@ app.use(
 );
 
 app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "survay ui")));
 app.use(express.static(path.join(__dirname, "pages", "home")));
 app.use(express.static(path.join(__dirname, "pages", "register")));
 app.use(express.static(path.join(__dirname, "pages", "form_maker")));

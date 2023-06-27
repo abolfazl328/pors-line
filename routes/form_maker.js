@@ -8,4 +8,6 @@ router.get("/form-maker", formMakerController.getFormMaker);
 
 router.post("/form-maker", formMakerController.postFormMaker);
 
+router.get("/survay/:formId", formMakerController.getSurvay);
+
 module.exports = router;
