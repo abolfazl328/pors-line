@@ -2,6 +2,7 @@ const path = require("path");
 const Form = require("../models/form");
 const xl = require("excel4node");
 const User = require("../models/user");
+const ExcelJS = require("exceljs");
 
 exports.getFormMaker = (req, res, next) => {
   res.sendFile(
@@ -30,8 +31,6 @@ exports.postFormMaker = (req, res, next) => {
     form.push(question);
   }
 
-  //
-
   User.findByPk(req.session.user.id)
     .then((user) => {
       console.log(user);
@@ -49,7 +48,8 @@ exports.postFormMaker = (req, res, next) => {
         },
       });
       var ws = wb.addWorksheet("Sheet 1");
-      let coulem = 1;
+      let coulem = 2;
+      ws.cell(1, 1).string("userId").style(style);
       for (let i of JSON.parse(form.form_structure)) {
         ws.cell(1, coulem).string(i[`question`]).style(style);
         coulem += 1;
@@ -75,6 +75,33 @@ exports.getSurvay = (req, res, next) => {
 
 exports.postSurvay = (req, res, next) => {
   console.log(req.body);
+  const userId = req.session.user.id;
+  let form_structure;
+  Form.findByPk(req.body.formNum)
+    .then((form) => {
+      form_structure = JSON.parse(form.form_structure);
+      const workbook = new ExcelJS.Workbook();
+      workbook.xlsx
+        .readFile(
+          path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
+        )
+        .then(() => {
+          const worksheet = workbook.getWorksheet("Sheet 1");
+          data = [userId];
+          for (i of form_structure) {
+            data.push(req.body[i.question]);
+          }
+          worksheet.addRow(data);
+          return workbook.xlsx.writeFile(
+            path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
+          );
+        })
+        .then(() => {
+          res.redirect("/form/forms");
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
 };
 
 exports.getForms = (req, res, next) => {
