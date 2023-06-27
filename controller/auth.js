@@ -50,26 +50,34 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.postRegister = (req, res, next) => {
-  req.session.email = req.body.email;
-  bcrypt
-    .hash(req.body.pass, 12)
-    .then((hashPass) => {
-      User.create({
-        email: req.body.email,
-        password: hashPass,
-        validation_code: random(),
-        validated: false,
-      }).catch((err) => {
-        console.log(err);
-        res.redirect("/auth/register");
-      });
+  User.findOne({ where: { email: req.body.email } })
+    .then((user) => {
+      if (user) {
+        return res.redirect("/auth/login");
+      } else {
+        req.session.email = req.body.email;
+        bcrypt
+          .hash(req.body.pass, 12)
+          .then((hashPass) => {
+            User.create({
+              email: req.body.email,
+              password: hashPass,
+              validation_code: random(),
+              validated: false,
+            }).catch((err) => {
+              console.log(err);
+              res.redirect("/auth/register");
+            });
+          })
+          .then(() => {
+            res.redirect("/auth/emailValidataion");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     })
-    .then(() => {
-      res.redirect("/auth/emailValidataion");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => console.log(err));
 };
 
 exports.postEmailValidate = (req, res, next) => {
