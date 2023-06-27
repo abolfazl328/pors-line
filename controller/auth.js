@@ -2,6 +2,7 @@ const path = require("path");
 const User = require("../models/user");
 const random = require("../util/rand");
 const bcrypt = require("bcryptjs");
+const { error } = require("console");
 
 exports.getLogin = (req, res, next) => {
   res.sendFile(path.join(__dirname, "../", "pages", "login", "login.html"));
@@ -27,7 +28,7 @@ exports.postLogin = (req, res, next) => {
           .compare(req.body.password, user.password)
           .then((result) => {
             if (result && user.validated) {
-              req.session.loggedIn = true;
+              req.session.isloggedIn = true;
               req.session.user = user;
               return res.redirect("/form/form-maker");
             } else {

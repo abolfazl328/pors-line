@@ -1,7 +1,7 @@
 const path = require("path");
-const User = require("../models/user");
 const Form = require("../models/form");
 const xl = require("excel4node");
+const User = require("../models/user");
 
 exports.getFormMaker = (req, res, next) => {
   res.sendFile(
@@ -31,8 +31,10 @@ exports.postFormMaker = (req, res, next) => {
   }
 
   //
-  User.findByPk(1)
+
+  User.findByPk(req.session.user.id)
     .then((user) => {
+      console.log(user);
       return user.createForm({
         name: req.body["form-name"],
         form_structure: JSON.stringify(form),
