@@ -3,7 +3,7 @@ const homeController = require("../controller/home");
 
 const router = express.Router();
 
-router.use("/", (req, res, next) => {
+router.get("/", (req, res, next) => {
   next();
 });
 

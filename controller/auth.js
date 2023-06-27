@@ -2,7 +2,7 @@ const path = require("path");
 const User = require("../models/user");
 const random = require("../util/rand");
 const bcrypt = require("bcryptjs");
-const { error } = require("console");
+const emailSender = require("../util/email_service");
 
 exports.getLogin = (req, res, next) => {
   res.sendFile(path.join(__dirname, "../", "pages", "login", "login.html"));
@@ -56,13 +56,14 @@ exports.postRegister = (req, res, next) => {
         return res.redirect("/auth/login");
       } else {
         req.session.email = req.body.email;
+        const validatCode = random();
         bcrypt
           .hash(req.body.pass, 12)
           .then((hashPass) => {
             User.create({
               email: req.body.email,
               password: hashPass,
-              validation_code: random(),
+              validation_code: validatCode,
               validated: false,
             }).catch((err) => {
               console.log(err);
@@ -71,6 +72,7 @@ exports.postRegister = (req, res, next) => {
           })
           .then(() => {
             res.redirect("/auth/emailValidataion");
+            emailSender.sendMail(req.body.email, validatCode);
           })
           .catch((err) => {
             console.log(err);
