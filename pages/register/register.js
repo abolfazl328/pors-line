@@ -11,15 +11,19 @@ form.addEventListener("submit", (event) => {
 
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	if (!emailRegex.test(emailInput.value)) {
-		errorMessage = "Please enter a valid email address\n";
+		errorMessage = "لطفا یک ادرس ایمیل معتبر وارد کنید\n";
 	}
 
 	if (passwordInput.value.length < 6) {
-		errorMessage = "Password must be at least 6 characters\n";
+		errorMessage = "رمز عبور باید از 6 کاراکتر بیش تر باشد\n";
+	}
+
+	if (passwordInput.value.length > 32) {
+		errorMessage = "رمز عبور باید از 32 کاراکتر کمتر باشد\n";
 	}
 
 	if (confirmPasswordInput.value !== passwordInput.value) {
-		errorMessage = "Passwords do not match\n";
+		errorMessage = "رمز عبور وارد شده با تکرار ان مطابقت ندارد\n";
 	}
 
 	if (errorMessage !== "") {
