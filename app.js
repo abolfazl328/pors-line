@@ -11,7 +11,6 @@ const mysql = require("mysql");
 const Forms = require("./models/form");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
-const Session = require("./models/session");
 
 dotenv.config();
 
@@ -52,6 +51,7 @@ app.use("/home", homeRouter);
 app.use("/form", formMakerRouter);
 
 Forms.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
+User.hasMany(Forms);
 
 sequelize
   // .sync({ force: true })
