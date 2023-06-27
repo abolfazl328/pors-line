@@ -30,7 +30,7 @@ exports.postLogin = (req, res, next) => {
             if (result && user.validated) {
               req.session.isloggedIn = true;
               req.session.user = user;
-              return res.redirect("/form/form-maker");
+              return res.redirect("/form/forms");
             } else {
               res.redirect("/auth/login");
             }

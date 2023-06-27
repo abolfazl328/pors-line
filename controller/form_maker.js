@@ -51,13 +51,11 @@ exports.postFormMaker = (req, res, next) => {
       var ws = wb.addWorksheet("Sheet 1");
       let coulem = 1;
       for (let i of JSON.parse(form.form_structure)) {
-        console.log(i);
-        console.log(i[`question`]);
         ws.cell(1, coulem).string(i[`question`]).style(style);
         coulem += 1;
       }
       wb.write(path.join(__dirname, "../", "excel", `${form.id}.xlsx`));
-      res.redirect("/home");
+      res.redirect("/form/forms");
     })
     .catch((err) => {
       console.log(err);
@@ -69,7 +67,24 @@ exports.getSurvay = (req, res, next) => {
     .then((form) => {
       res.render("survay ui", {
         questions: JSON.parse(form.form_structure),
+        formNum: form.id,
       });
     })
     .catch((err) => console.log(err));
+};
+
+exports.postSurvay = (req, res, next) => {
+  console.log(req.body);
+};
+
+exports.getForms = (req, res, next) => {
+  Form.findAll({ where: { userId: req.session.user.id } })
+    .then((forms) => {
+      res.render("forms", {
+        forms: forms,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };

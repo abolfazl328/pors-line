@@ -3,7 +3,9 @@ const homeController = require("../controller/home");
 
 const router = express.Router();
 
-router.use("/", homeController.getHome);
+router.use("/", (req, res, next) => {
+  next();
+});
 
 router.use("/home", homeController.getHome);
 
