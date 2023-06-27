@@ -1,6 +1,7 @@
 const path = require("path");
 const User = require("../models/user");
 const random = require("../util/rand");
+const bcrypt = require("bcryptjs");
 
 exports.getLogin = (req, res, next) => {
   res.sendFile(path.join(__dirname, "../", "pages", "login", "login.html"));
@@ -21,15 +22,26 @@ exports.getEmailValidate = (req, res, next) => {
 exports.postLogin = (req, res, next) => {
   User.findOne({ where: { email: req.body.email } })
     .then((user) => {
-      console.log(user);
       if (user) {
-        if (user.password === req.body.password && user.validated) {
-          req.session.loggedIn = true;
-          req.session.user = user;
-          return res.redirect("/form/form-maker");
-        }
+        bcrypt
+          .compare(req.body.password, user.password)
+          .then((result) => {
+            console.log(result);
+            if (result && user.validated) {
+              req.session.loggedIn = true;
+              req.session.user = user;
+              return res.redirect("/form/form-maker");
+            } else {
+              res.redirect("/auth/login");
+            }
+          })
+          .catch((err) => {
+            res.redirect("/auth/login");
+            console.log(err);
+          });
+      } else {
+        res.redirect("/auth/login");
       }
-      res.redirect("/auth/login");
     })
     .catch((err) => {
       console.log(err);
@@ -39,18 +51,24 @@ exports.postLogin = (req, res, next) => {
 
 exports.postRegister = (req, res, next) => {
   req.session.email = req.body.email;
-  User.create({
-    email: req.body.email,
-    password: req.body.pass,
-    validation_code: random(),
-    validated: false,
-  })
+  bcrypt
+    .hash(req.body.pass, 12)
+    .then((hashPass) => {
+      User.create({
+        email: req.body.email,
+        password: hashPass,
+        validation_code: random(),
+        validated: false,
+      }).catch((err) => {
+        console.log(err);
+        res.redirect("/auth/register");
+      });
+    })
     .then(() => {
       res.redirect("/auth/emailValidataion");
     })
     .catch((err) => {
       console.log(err);
-      res.redirect("/auth/register");
     });
 };
 

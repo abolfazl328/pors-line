@@ -4,10 +4,12 @@ const router = express.Router();
 
 const formMakerController = require("../controller/form_maker");
 
-router.get("/form-maker", formMakerController.getFormMaker);
+const isAuth = require("../middleware/is-auth");
 
-router.post("/form-maker", formMakerController.postFormMaker);
+router.get("/form-maker", isAuth, formMakerController.getFormMaker);
 
-router.get("/survay/:formId", formMakerController.getSurvay);
+router.post("/form-maker", isAuth, formMakerController.postFormMaker);
+
+router.get("/survay/:formId", isAuth, formMakerController.getSurvay);
 
 module.exports = router;
