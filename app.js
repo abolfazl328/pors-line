@@ -32,7 +32,7 @@ const app = express();
 // const csrufProtectoin = csurf({});
 
 app.set("view engine", "ejs");
-app.set("views", "survay ui");
+app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
@@ -47,12 +47,6 @@ app.use(
 // app.use(csrufProtectoin);
 
 app.use(express.static(path.join(__dirname)));
-app.use(express.static(path.join(__dirname, "survay ui")));
-app.use(express.static(path.join(__dirname, "pages", "home")));
-app.use(express.static(path.join(__dirname, "pages", "register")));
-app.use(express.static(path.join(__dirname, "pages", "form_maker")));
-app.use(express.static(path.join(__dirname, "responsive")));
-
 // app.use((req, res, next) => {
 //   res.locals.isAuthenticated = req.session.isLoggedIn;
 //   res.locals.csrfToken = req.csrfToken();

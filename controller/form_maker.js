@@ -5,9 +5,7 @@ const User = require("../models/user");
 const ExcelJS = require("exceljs");
 
 exports.getFormMaker = (req, res, next) => {
-  res.sendFile(
-    path.join(__dirname, "../", "pages", "form_maker", "form_maker.html")
-  );
+  res.sendFile(path.join(__dirname, "../", "views", "form_maker.html"));
 };
 
 exports.postFormMaker = (req, res, next) => {
@@ -65,7 +63,7 @@ exports.postFormMaker = (req, res, next) => {
 exports.getSurvay = (req, res, next) => {
   Form.findOne({ where: { id: Number(req.params.formId) } })
     .then((form) => {
-      res.render("survay ui", {
+      res.render("survay_ui", {
         questions: JSON.parse(form.form_structure),
         formNum: form.id,
       });

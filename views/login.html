@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ورود</title>
-		<link rel="stylesheet" href="../../style/style.css" />
-	</head>
-	<body>
-		<div class="container1">
-			<p class="txt box1">لطفا وارد شوید</p>
-			<form action="/auth/login" method="post">
-				<input
-					name="email"
-					type="email"
-					placeholder="ادرس ایمیل"
-					autofocus
-				/><br />
-				<input
-					name="password"
-					type="password"
-					placeholder="رمز عبور"
-					min="8"
-				/><br />
-				<button
-					name="submit"
-					type="submit"
-					id="submitButton"
-					class="submit-btn"
-				>
-					ورود</button
-				><br /><br /><br />
-			</form>
-			<p class="message">
-				ثبت نام نکرده اید؟
-				<a href="../auth/register" class="color">ثبت نام</a>
-			</p>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
+  <body>
+    <div class="container1">
+      <p class="txt box1">لطفا وارد شوید</p>
+      <form action="/auth/login" method="post">
+        <input
+          name="email"
+          type="email"
+          placeholder="ادرس ایمیل"
+          autofocus
+        /><br />
+        <input
+          name="password"
+          type="password"
+          placeholder="رمز عبور"
+          min="8"
+        /><br />
+        <button
+          name="submit"
+          type="submit"
+          id="submitButton"
+          class="submit-btn"
+        >
+          ورود</button
+        ><br /><br /><br />
+      </form>
+      <p class="message">
+        ثبت نام نکرده اید؟
+        <a href="../auth/register" class="color">ثبت نام</a>
+      </p>
+    </div>
+  </body>
 </html>

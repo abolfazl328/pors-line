@@ -6,19 +6,15 @@ const emailSender = require("../util/email_service");
 const crypto = require("crypto");
 
 exports.getLogin = (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../", "pages", "login", "login.html"));
+  res.sendFile(path.join(__dirname, "../", "views", "login.html"));
 };
 
 exports.getRegister = (req, res, next) => {
-  res.sendFile(
-    path.join(__dirname, "../", "pages", "register", "register.html")
-  );
+  res.sendFile(path.join(__dirname, "../", "views", "register.html"));
 };
 
 exports.getEmailValidate = (req, res, next) => {
-  res.sendFile(
-    path.join(__dirname, "../", "pages", "email_validation", "email.html")
-  );
+  res.sendFile(path.join(__dirname, "../", "views", "email.html"));
 };
 
 exports.postLogin = (req, res, next) => {
