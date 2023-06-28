@@ -51,6 +51,18 @@ form input {
 		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
+.submit-btn-nav {
+	padding: 5px 19px;
+	/* margin-top: 5px; */
+	font-size: 20px;
+	background-color: #ff9f1c;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
 .box1 {
 	margin: 10px 5px 30px 5px;
 }
@@ -75,4 +87,15 @@ form input {
 a {
 	text-decoration: none;
 	color: black;
+}
+.p-right10 {
+	margin-right: 10px;
+}
+.left-side {
+	text-align: left;
+	float: left;
+}
+.hovering1:hover {
+	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+		rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
