@@ -59,11 +59,11 @@ app.use(express.static(path.join(__dirname, "responsive")));
 //   next();
 // });
 
-app.use("/", homeRouter);
-
 app.use("/auth", authRouter);
 
 app.use("/form", formMakerRouter);
+
+app.use("/", homeRouter);
 
 Forms.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 User.hasMany(Forms);
