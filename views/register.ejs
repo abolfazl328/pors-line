@@ -4,45 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ورود</title>
+    <title>ثبت نام</title>
     <link rel="stylesheet" href="../public/css/style.css" />
   </head>
   <body>
     <div class="container1">
-      <p class="txt box1">لطفا وارد شوید</p>
+      <div class="box1">
+        <p class="txt">به فرم ساز خوش امدید!</p>
+        <p class="txt">لطفا از طریق فرم زیر ثبت نام کنید</p>
+      </div>
+
       <div id="error-container" class="error"></div>
       <br />
-      <form action="/auth/login" method="post">
+      <form
+        name="register"
+        action="/auth/register"
+        method="post"
+        id="registration-form"
+      >
         <input
           name="email"
           type="email"
+          id="email"
           placeholder="ادرس ایمیل"
           autofocus
         /><br />
         <input
-          name="password"
+          name="pass"
           type="password"
           placeholder="رمز عبور"
-          min="8"
+          id="password"
+        /><br />
+        <input
+          name="repass"
+          type="password"
+          placeholder="تکرار رمز عبور"
+          id="confirm-password"
         /><br />
         <button
-          name="submit"
+          name="btnSubmit"
           type="submit"
+          value="ثبت نام"
           id="submitButton"
           class="submit-btn"
         >
-          ورود</button
+          ثبت نام</button
         ><br /><br /><br />
       </form>
       <p class="message">
-        ثبت نام نکرده اید؟
-        <a href="../auth/register" class="color">ثبت نام</a>
-      </p>
-
-      <p class="message">
-        رمز عبور خود را فراموش کرده اید؟
-        <a href="../auth/reset" class="color">بازیابی رمز عبور</a>
+        قبلا ثبت نام کرده اید؟
+        <a href="../auth/login" class="color">وارد شدن</a>
       </p>
     </div>
+    <script src="../public/js/register.js"></script>
   </body>
 </html>
