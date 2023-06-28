@@ -32,6 +32,7 @@ function addTextQuestion() {
                     type="text"
                     name="q${question_num}-txt"
                     id="q${question_num}-txt"
+                    required
                 /><br /><br />
                 <label for="ans${question_num}-txt"></label>
                 <textarea
@@ -66,6 +67,7 @@ function addMultiQuestion() {
                 type="text"
                 name="q${question_num}-multi"
                 id="q${question_num}-multi"
+                required
             /><br /><br />
 
             <!-- options: -->
@@ -79,6 +81,7 @@ function addMultiQuestion() {
                 type="text"
                 name="ans${question_num}-multi_1"
                 id="ans${question_num}-multi_1"
+                required
             /><br /><br />
         </div>
 
@@ -88,6 +91,7 @@ function addMultiQuestion() {
                 type="text"
                 name="ans${question_num}-multi_2"
                 id="ans${question_num}-multi_2"
+                required
             /><br /><br />
         </div>
 
@@ -97,6 +101,7 @@ function addMultiQuestion() {
                 type="text"
                 name="ans${question_num}-multi_3"
                 id="ans${question_num}-multi_3"
+                required
             /><br /><br />
         </div>
 
@@ -106,6 +111,7 @@ function addMultiQuestion() {
                 type="text"
                 name="ans${question_num}-multi_4"
                 id="ans${question_num}-multi_4"
+                required
             /><br /><br />
         </div>
     </div>
@@ -131,6 +137,7 @@ function addMultiQuestion() {
 //                 type="text"
 //                 name="q${question_num}-upload"
 //                 id="q${question_num}-upload"
+// required
 //             /><br /><br />
 
 //             <form action="/action_page.php">
