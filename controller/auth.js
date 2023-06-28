@@ -3,6 +3,7 @@ const User = require("../models/user");
 const random = require("../util/rand");
 const bcrypt = require("bcryptjs");
 const emailSender = require("../util/email_service");
+const crypto = require("crypto");
 
 exports.getLogin = (req, res, next) => {
   res.sendFile(path.join(__dirname, "../", "pages", "login", "login.html"));
@@ -97,4 +98,14 @@ exports.postEmailValidate = (req, res, next) => {
       console.log(err);
       res.redirect("/auth/register");
     });
+};
+
+exports.postResetPassword = (req, res, next) => {
+  crypto.randomBytes(32, (err, buffer) => {
+    if (err) {
+      console.log(err);
+      // return res.redirect();
+    }
+    const token = buffer.toString("hex");
+  });
 };
