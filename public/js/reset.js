@@ -30,4 +30,5 @@ form.addEventListener("submit", (event) => {
 function showError(errorMessage) {
 	errorContainer.innerHTML = errorMessage;
 	errorContainer.style.display = "block";
+	errorContainer.classList.add("error");
 }
