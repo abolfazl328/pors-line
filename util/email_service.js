@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-exports.sendMail = (toEmail, text) => {
+exports.sendMail = (toEmail, text, subject) => {
   console.log(toEmail, text);
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -12,15 +12,9 @@ exports.sendMail = (toEmail, text) => {
   var mailOptions = {
     from: process.env.email,
     to: toEmail,
-    subject: "form saz email validataion",
-    text: String(text),
+    subject: subject,
+    html: text,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
+  transporter.sendMail(mailOptions);
 };
