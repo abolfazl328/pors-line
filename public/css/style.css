@@ -42,7 +42,7 @@ form input {
 .submit-btn {
 	font-size: 20px;
 	width: 100%;
-	padding: 10px 130px;
+	padding: 10px 100px;
 	border: none;
 	background-color: #ff9f1c;
 	border-radius: 10px;
@@ -57,18 +57,23 @@ form input {
 .message {
 	font-size: 15px;
 }
-a.color {
+.color {
 	text-decoration: none;
-	color: #FF9F1C;
+	color: #ff9f1c;
 }
 ::placeholder {
 	color: #adadad;
 	opacity: 1;
 }
-.error{
+.error {
 	border: 1px dashed red;
 	background-color: #ffaaaa;
 	padding: 5px 30px;
 	border-radius: 5px;
 	width: 100%;
+}
+a {
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
 }
