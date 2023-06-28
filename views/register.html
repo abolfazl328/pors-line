@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ثبت نام</title>
-    <link rel="stylesheet" href="../public/css/style.css" />
-  </head>
-  <body>
-    <div class="container1">
-      <div class="box1">
-        <p class="txt">به فرم ساز خوش امدید!</p>
-        <p class="txt">لطفا از طریق فرم زیر ثبت نام کنید</p>
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ثبت نام</title>
+		<link rel="stylesheet" href="../public/css/style.css" />
+	</head>
+	<body>
+		<div class="container1">
+			<div class="box1">
+				<p class="txt">به فرم ساز خوش امدید!</p>
+				<p class="txt">لطفا از طریق فرم زیر ثبت نام کنید</p>
+			</div>
 
-      <div id="error-container" class="error"></div>
-      <br />
-      <form
-        name="register"
-        action="/auth/register"
-        method="post"
-        id="registration-form"
-      >
-        <input
-          name="email"
-          type="email"
-          id="email"
-          placeholder="ادرس ایمیل"
-          autofocus
-        /><br />
-        <input
-          name="pass"
-          type="password"
-          placeholder="رمز عبور"
-          id="password"
-        /><br />
-        <input
-          name="repass"
-          type="password"
-          placeholder="تکرار رمز عبور"
-          id="confirm-password"
-        /><br />
-        <button
-          name="btnSubmit"
-          type="submit"
-          value="ثبت نام"
-          id="submitButton"
-          class="submit-btn"
-        >
-          ثبت نام</button
-        ><br /><br /><br />
-      </form>
-      <p class="message">
-        قبلا ثبت نام کرده اید؟
-        <a href="../auth/login" class="color">وارد شدن</a>
-      </p>
-    </div>
-    <script src="../public/js/register.js"></script>
-  </body>
+			<div id="error-container"></div>
+			<br />
+			<form
+				name="register"
+				action="/auth/register"
+				method="post"
+				id="registration-form"
+			>
+				<input
+					name="email"
+					type="email"
+					id="email"
+					placeholder="ادرس ایمیل"
+					autofocus
+				/><br />
+				<input
+					name="pass"
+					type="password"
+					placeholder="رمز عبور"
+					id="password"
+				/><br />
+				<input
+					name="repass"
+					type="password"
+					placeholder="تکرار رمز عبور"
+					id="confirm-password"
+				/><br />
+				<button
+					name="btnSubmit"
+					type="submit"
+					value="ثبت نام"
+					id="submitButton"
+					class="submit-btn"
+				>
+					ثبت نام</button
+				><br /><br /><br />
+			</form>
+			<p class="message">
+				قبلا ثبت نام کرده اید؟
+				<a href="../auth/login" class="color">وارد شدن</a>
+			</p>
+		</div>
+		<script src="../public/js/register.js"></script>
+	</body>
 </html>
