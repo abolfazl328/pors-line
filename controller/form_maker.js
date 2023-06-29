@@ -76,10 +76,11 @@ exports.getSurvay = (req, res, next) => {
 };
 
 exports.postSurvay = (req, res, next) => {
-  console.log(req.body);
-  console.log(req.files);
   const userId = req.session.user.id;
   let form_structure;
+  if (!req.files) {
+    return res.redirect("/");
+  }
   Form.findByPk(req.body.formNum)
     .then((form) => {
       form_structure = JSON.parse(form.form_structure);
