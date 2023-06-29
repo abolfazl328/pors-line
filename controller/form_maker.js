@@ -5,7 +5,6 @@ const User = require("../models/user");
 const ExcelJS = require("exceljs");
 
 exports.getFormMaker = (req, res, next) => {
-  // res.sendFile(path.join(__dirname, "../", "views", "form_maker.html"));
   res.render("form_maker", { isLoggedIn: req.session.isloggedIn });
 };
 
@@ -57,9 +56,8 @@ exports.postFormMaker = (req, res, next) => {
         coulem += 1;
       }
       wb.write(path.join(__dirname, "../", "data", "excel", `${form.id}.xlsx`));
-      res.sendFile(
-        path.join(__dirname, "../", "views", "success_form_maker.html")
-      );
+      console.log(req.session);
+      res.render("success_form", { isLoggedIn: req.session.isLoggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -134,6 +132,7 @@ exports.getForms = (req, res, next) => {
     .then((forms) => {
       res.render("forms", {
         forms: forms,
+        isLoggedIn: req.session.isloggedIn,
       });
     })
     .catch((err) => {

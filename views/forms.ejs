@@ -7,8 +7,10 @@
 		<title>forms</title>
 		<link rel="stylesheet" href="../public/css/survay-ui.css" />
 		<link rel="stylesheet" href="../public/css/responsive.css" />
+		<link rel="stylesheet" href="../public/css/navbar.css" />
 	</head>
 	<body>
+		<%- include("./navbar.ejs") %>
 		<div class="container">
             <% if(forms.length == 0){ %>
 			<p class="question">شما تاکنون فرمی ایجاد نکرده اید</p>
