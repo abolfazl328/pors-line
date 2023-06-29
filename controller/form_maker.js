@@ -34,7 +34,6 @@ exports.postFormMaker = (req, res, next) => {
 
   User.findByPk(req.session.user.id)
     .then((user) => {
-      console.log(user);
       return user.createForm({
         name: req.body["form-name"],
         form_structure: JSON.stringify(form),
@@ -56,7 +55,6 @@ exports.postFormMaker = (req, res, next) => {
         coulem += 1;
       }
       wb.write(path.join(__dirname, "../", "data", "excel", `${form.id}.xlsx`));
-      console.log(req.session);
       res.render("success_form", { isLoggedIn: req.session.isloggedIn });
     })
     .catch((err) => {
@@ -68,6 +66,7 @@ exports.getSurvay = (req, res, next) => {
   Form.findOne({ where: { id: Number(req.params.formId) } })
     .then((form) => {
       res.render("survay_ui", {
+        isLoggedIn: req.session.isloggedIn,
         questions: JSON.parse(form.form_structure),
         formNum: form.id,
       });
