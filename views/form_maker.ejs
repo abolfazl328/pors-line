@@ -9,28 +9,27 @@
     <link rel="stylesheet" href="../public/css/responsive.css" />
   </head>
   <body>
-    <%-include("./navbar.ejs")%>
     <div class="container">
       <p class="message">
         برای ساختن فرم، لطفا یکی از موارد زیر را انتخاب کنید
       </p>
 
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
           <button class="btn hovering1" id="textButton">
             متنی با پاسخ کوتاه
           </button>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
           <button class="btn hovering1" id="multi-button">چند گزینه ای</button>
         </div>
-        <!-- <div class="col-lg-4">
+        <div class="col-lg-4">
           <button class="btn hovering1" id="upload-button">آپلود فایل</button>
-        </div> -->
+        </div>
       </div>
 
       <div>
-        <form action="/form/form-maker" method="post" enctype="multipart/form-data">
+        <form action="/form/form-maker" method="post">
           <div>
             <input name="hiddenInput" type="hidden" value="" id="hiddenInput">
           </div>

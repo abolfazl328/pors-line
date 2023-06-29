@@ -9,6 +9,7 @@ exports.getFormMaker = (req, res, next) => {
 };
 
 exports.postFormMaker = (req, res, next) => {
+  console.log(req.body);
   let num = Number(req.body.hiddenInput);
   let form = [];
   for (let i = 0; i < num; i++) {
@@ -25,6 +26,9 @@ exports.postFormMaker = (req, res, next) => {
     } else if (req.body[`q${i}-txt`]) {
       question[`question`] = req.body[`q${i}-txt`];
       question["type"] = "txt";
+    } else {
+      question[`question`] = req.body[`q${i}-upload`];
+      question["type"] = "upload";
     }
     form.push(question);
   }
@@ -52,7 +56,7 @@ exports.postFormMaker = (req, res, next) => {
         ws.cell(1, coulem).string(i[`question`]).style(style);
         coulem += 1;
       }
-      wb.write(path.join(__dirname, "../", "excel", `${form.id}.xlsx`));
+      wb.write(path.join(__dirname, "../", "data", "excel", `${form.id}.xlsx`));
       res.redirect("/form/forms");
     })
     .catch((err) => {
@@ -72,34 +76,37 @@ exports.getSurvay = (req, res, next) => {
 };
 
 exports.postSurvay = (req, res, next) => {
+  console.log("here");
   console.log(req.body);
-  const userId = req.session.user.id;
-  let form_structure;
-  Form.findByPk(req.body.formNum)
-    .then((form) => {
-      form_structure = JSON.parse(form.form_structure);
-      const workbook = new ExcelJS.Workbook();
-      workbook.xlsx
-        .readFile(
-          path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
-        )
-        .then(() => {
-          const worksheet = workbook.getWorksheet("Sheet 1");
-          data = [userId];
-          for (i of form_structure) {
-            data.push(req.body[i.question]);
-          }
-          worksheet.addRow(data);
-          return workbook.xlsx.writeFile(
-            path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
-          );
-        })
-        .then(() => {
-          res.redirect("/form/forms");
-        })
-        .catch((err) => console.log(err));
-    })
-    .catch((err) => console.log(err));
+  console.log("here");
+  console.log(req.files);
+  // const userId = req.session.user.id;
+  // let form_structure;
+  // Form.findByPk(req.body.formNum)
+  //   .then((form) => {
+  //     form_structure = JSON.parse(form.form_structure);
+  //     const workbook = new ExcelJS.Workbook();
+  //     workbook.xlsx
+  //       .readFile(
+  //         path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
+  //       )
+  //       .then(() => {
+  //         const worksheet = workbook.getWorksheet("Sheet 1");
+  //         data = [userId];
+  //         for (i of form_structure) {
+  //           data.push(req.body[i.question]);
+  //         }
+  //         worksheet.addRow(data);
+  //         return workbook.xlsx.writeFile(
+  //           path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
+  //         );
+  //       })
+  //       .then(() => {
+  //         res.redirect("/form/forms");
+  //       })
+  //       .catch((err) => console.log(err));
+  //   })
+  //   .catch((err) => console.log(err));
 };
 
 exports.getForms = (req, res, next) => {

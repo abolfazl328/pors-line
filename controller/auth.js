@@ -4,6 +4,7 @@ const random = require("../util/rand");
 const bcrypt = require("bcryptjs");
 const emailSender = require("../util/email_service");
 const crypto = require("crypto");
+const { validationResult } = require("express-validator");
 
 exports.getLogin = (req, res, next) => {
   res.render("login", { error: false });
@@ -51,6 +52,10 @@ exports.getResetPassword = (req, res, next) => {
 };
 
 exports.postLogin = (req, res, next) => {
+  const erros = validationResult(req);
+  if (!erros.isEmpty()) {
+    return res.status(422).render("/auth/login");
+  }
   User.findOne({ where: { email: req.body.email } })
     .then((user) => {
       if (user) {

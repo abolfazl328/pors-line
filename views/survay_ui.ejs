@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form action="/form/survay" method="post" name="user-ui">
+			<form action="/form/survay" method="post" name="user-ui" enctype="multipart/form-data">
 				<div class="row col-lg-12">
 					<%for(question of questions){%>
 					<%if(question.type == "txt"){%>
@@ -28,7 +28,7 @@
 					><br /><br />
 					<hr />
 					<br />
-					<%}else{%>
+					<%}else if(question.type == "multi"){%>
 					<p class="question"><%=question.question%></p>
 
 					<div class="row">
@@ -61,9 +61,25 @@
 							</label>
 						</div>
 					</div>
+					<hr/>
+					<br/>
+					<%}else{%>
+						<br /><br />
+						
+						
+						<div id="upload-question">
+							<div class="row">
+							  	<div class="col-lg-4 right-side">
+									<p class="question"><%=question.question%></p>
+									<input type="file" id="myFile" name="<%=question.question%>"/><br />
+								</div>
+							</div>
+						</div>
 					<%}%>
 					<%}%>
 				</div>
+				<br />
+				<hr />
 				<input type="hidden" name="formNum" value="<%=formNum%>">
 				<button class="submit-btn1 hovering1" type="submit">
 					تایید
