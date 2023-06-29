@@ -65,7 +65,7 @@ li a:hover {
 .nav-white-color {
 	background-color: white;
 	margin-top: -20px;
-	margin-bottom: 50px;
+	/* margin-bottom: 50px; */
 }
 header {
 	position: fixed;

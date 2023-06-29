@@ -14,17 +14,18 @@
 }
 body {
 	background-color: #ffbf69;
-	padding: 0 80px 30px 80px;
+	padding: 0 0 20px 0px;
 }
 .message {
 	font-size: 20px;
 	margin-bottom: 30px;
 }
 .container2 {
+	width: 1400px;
 	background-color: white;
 	text-align: center;
-	margin: auto;
-	padding: 50px 50px 100px 50px;
+	margin: 100px auto 50px;
+	padding: 50px 50px 80px 50px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	border-radius: 10px;
 }

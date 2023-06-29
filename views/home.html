@@ -6,11 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../public/css/home.css" />
 		<link rel="stylesheet" href="../public/css/responsive.css" />
+		<link rel="stylesheet" href="../public/css/navbar.css" />
 		<title>صفحه اصلی</title>
 	</head>
 	<body>
-		<div class="header container-fluid">
-			<div class="container">
+		<!-- navbar -->
+		<div class="header container-fluid nav-white-color">
+			<div class="nav-container">
 				<div class="row">
 					<div class="col-lg-1">
 						<img
@@ -21,33 +23,45 @@
 						/>
 					</div>
 					<div class="col-lg-9">
-						<div class="p-right10">
+						<div class="nav-p-right10">
 							<ul>
-								<li><a href="/home">خانه</a></li>
-								<li><a href="/form/form-maker">فرم ساز</a></li>
-								<li><a href="/form/forms">فرم ها</a></li>
+								<li><a href="/home" class="nav-a">خانه</a></li>
+								<li>
+									<a href="/form/form-maker" class="nav-a"
+										>فرم ساز</a
+									>
+								</li>
+								<li>
+									<a href="/form/forms" class="nav-a"
+										>فرم ها</a
+									>
+								</li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="col-lg-1">
-						<div class="left-side">
-							<button class="submit-btn hovering1">
-								<a href="/auth/login">ورود</a>
+						<div class="nav-left-side">
+							<button class="submit-btn-nav hovering1">
+								<a href="/auth/register" class="nav-a">ورود</a>
 							</button>
 						</div>
 					</div>
 
 					<div class="col-lg-1">
-						<div class="left-side">
-							<button class="submit-btn hovering1">
-								<a href="/auth/register">ثبت نام</a>
+						<div class="nav-left-side">
+							<button class="submit-btn-nav hovering1">
+								<a href="/auth/register" class="nav-a"
+									>ثبت نام</a
+								>
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- navbar -->
 		<div class="container-fluid bg-image">
 			<p class="pad_bot30 title1">با فرم ساز، به راحتی فرم ایجاد کنید</p>
 			<button class="start-btn hovering1">

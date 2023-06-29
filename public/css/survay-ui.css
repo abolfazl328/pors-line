@@ -15,18 +15,19 @@
 body {
 	background-color: #ffbf69;
 	font-family: "Roboto", sans-serif;
-	padding: 0px 100px;
+	/* padding: 0px 100px; */
 }
 .question {
 	font-size: 25px;
 	margin-bottom: 30px;
 }
-.container {
+.container3 {
 	background-color: white;
-	text-align: right;
-	padding: 120px 150px;
+	padding: 100px 120px 120px 120px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	border-radius: 10px;
+	max-width: 1400px;
+    margin: 50px auto;
 }
 .txt-answer {
 	font-size: 20px;
@@ -83,6 +84,7 @@ input[type="file"] {
 a {
 	text-decoration: none;
 	font-size: 20px;
+	color: black;
 }
 .hovering1:hover {
 	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,

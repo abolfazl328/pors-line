@@ -1,0 +1,72 @@
+@font-face {
+	font-family: "Yekan";
+	src: url("../../fonts/BYekan.ttf") format("truetype"),
+		url("../../fonts/BYekan.eot") format("eot"),
+		url("../../fonts/BYekan.woff") format("woff");
+	font-style: normal;
+	font-weight: normal;
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Yekan";
+}
+body {
+	background-color: #ffbf69;
+	/* padding: 120px; */
+}
+.txt {
+	font-size: 20px;
+}
+.container1 {
+	width: 400px;
+	background-color: white;
+	text-align: center;
+	margin: 100px auto;
+	padding: 30px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-radius: 10px;
+}
+.submit-btn {
+	font-size: 20px;
+	width: 100%;
+	padding: 10px 100px;
+	border: none;
+	background-color: #ff9f1c;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.box1 {
+	margin: 10px 5px 30px 5px;
+}
+.message {
+	font-size: 15px;
+}
+.color {
+	text-decoration: none;
+	color: #ff9f1c;
+}
+::placeholder {
+	color: #adadad;
+	opacity: 1;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+.p-right10 {
+	margin-right: 10px;
+}
+.left-side {
+	text-align: left;
+	float: left;
+}
+.hovering1:hover {
+	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+		rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
