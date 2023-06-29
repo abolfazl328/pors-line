@@ -119,10 +119,6 @@ li a:hover {
 		rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
 		rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-.container {
-	padding: 0 10px;
-	color: #1b1b1b;
-}
 .pad_top10 {
 	padding-top: 10px;
 }
@@ -183,7 +179,7 @@ li a:hover {
 	background-color: #f7f8fa;
 	margin-top: -20px;
 }
-a {
+a{
 	text-decoration: none;
 	color: #000000;
 }
