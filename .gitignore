@@ -3,5 +3,9 @@ node_modules
 .env
 
 .prettierignore
-data/**/**
 
+data/excel/*.xlsx
+
+data/files/*.*
+
+!data/files/.gitkeep
