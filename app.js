@@ -64,7 +64,6 @@ Forms.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 User.hasMany(Forms);
 
 sequelize
-  // .sync({ force: true })
   .sync()
   .then((result) => console.log(result))
   .catch((err) => console.log(err));

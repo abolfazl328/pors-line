@@ -28,5 +28,4 @@ emailPass = "google account password" # enter the password that u have providee 
 
 serverHost = "http://localhost:4000" # enter your server host name
 
-then after u have enterd all of the neccessary values in .env file now go to app.js file uncomment line 67 and comment line 68 and run the server so necessery tables get created on data base and after tht server was started successusfully not shout down server and comment line 67 and uncomment line 68 and run the server
-now you'r all set to start you'r app.
+then u can start the server by running the command npm run start-server
