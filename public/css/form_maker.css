@@ -120,3 +120,7 @@ legend {
 .p-right10 {
 	margin-right: 10px;
 }
+a {
+	text-decoration: none;
+	color: #000000;
+}
