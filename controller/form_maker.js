@@ -57,7 +57,7 @@ exports.postFormMaker = (req, res, next) => {
       }
       wb.write(path.join(__dirname, "../", "data", "excel", `${form.id}.xlsx`));
       console.log(req.session);
-      res.render("success_form", { isLoggedIn: req.session.isLoggedIn });
+      res.render("success_form", { isLoggedIn: req.session.isloggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -103,8 +103,12 @@ exports.postSurvay = (req, res, next) => {
               const file = req.files.find(
                 (file) => file.fieldname == i.question
               );
-              console.log(req.files);
-              data.push(file.path);
+              data.push({
+                text: "file",
+                hyperlink: file.path,
+                tooltip: "clcik to open file",
+              });
+              // { text: 'Google', hyperlink: 'https://www.google.com', tooltip: 'Click to visit Google' }
               continue;
             }
             data.push(req.body[i.question]);
