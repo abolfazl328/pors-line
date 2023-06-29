@@ -11,7 +11,7 @@ const mysql = require("mysql");
 const Forms = require("./models/form");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
-// const csurf = require("csurf");
+const csurf = require("csurf");
 
 dotenv.config();
 
@@ -29,7 +29,7 @@ const sessionStore = new MySQLStore({}, connection);
 
 const app = express();
 
-// const csrufProtectoin = csurf({});
+const csrufProtectoin = csurf();
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -45,14 +45,14 @@ app.use(
   })
 );
 
-// app.use(csrufProtectoin);
+app.use(csrufProtectoin);
 
 app.use(express.static(path.join(__dirname)));
-// app.use((req, res, next) => {
-//   res.locals.isAuthenticated = req.session.isLoggedIn;
-//   res.locals.csrfToken = req.csrfToken();
-//   next();
-// });
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.isLoggedIn;
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
 
 app.use("/auth", authRouter);
 

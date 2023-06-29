@@ -12,7 +12,7 @@
 	<body>
 		<%-include("./navbar.ejs")%>
 		<div class="container3">
-			<form action="/form/survay" method="post" name="user-ui" enctype="multipart/form-data">
+			<form action="/form/survay/?_csrf=<%=csrfToken%>" method="post" name="user-ui" enctype="multipart/form-data">
 				<div class="row col-lg-12">
 					<%for(question of questions){%>
 					<%if(question.type == "txt"){%>
@@ -81,9 +81,11 @@
 				</div>
 				<br />
 				<hr />
+				<input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
 				<input type="hidden" name="formNum" value="<%=formNum%>">
 				<button class="submit-btn1 hovering1" type="submit">
 					تایید
+				</button>
 				<br />
 			</form>
 		</div>
