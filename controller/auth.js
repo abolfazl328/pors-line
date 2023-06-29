@@ -51,6 +51,13 @@ exports.getResetPassword = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
+exports.getLogOut = (req, res, next) => {
+  req.session.destroy((err) => {
+    console.log(err);
+    res.redirect("/");
+  });
+};
+
 exports.postLogin = (req, res, next) => {
   const erros = validationResult(req);
   if (!erros.isEmpty()) {

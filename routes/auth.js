@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controller/auth");
 const isRegister = require("../middleware/is-registerd");
-const { check } = require("express-validator");
+const isAuth = require("../middleware/is-auth");
 
 router.get("/login", authController.getLogin);
 
@@ -23,5 +23,7 @@ router.post("/emailValidataion", isRegister, authController.postEmailValidate);
 router.post("/reset", authController.postReset);
 
 router.post("/resetPassword", authController.postResetPassword);
+
+router.get("/logout", isAuth, authController.getLogOut);
 
 module.exports = router;
