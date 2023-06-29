@@ -76,37 +76,55 @@ exports.getSurvay = (req, res, next) => {
 };
 
 exports.postSurvay = (req, res, next) => {
-  console.log("here");
   console.log(req.body);
-  console.log("here");
   console.log(req.files);
-  // const userId = req.session.user.id;
-  // let form_structure;
-  // Form.findByPk(req.body.formNum)
-  //   .then((form) => {
-  //     form_structure = JSON.parse(form.form_structure);
-  //     const workbook = new ExcelJS.Workbook();
-  //     workbook.xlsx
-  //       .readFile(
-  //         path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
-  //       )
-  //       .then(() => {
-  //         const worksheet = workbook.getWorksheet("Sheet 1");
-  //         data = [userId];
-  //         for (i of form_structure) {
-  //           data.push(req.body[i.question]);
-  //         }
-  //         worksheet.addRow(data);
-  //         return workbook.xlsx.writeFile(
-  //           path.join(__dirname, "../", "excel", `${req.body.formNum}.xlsx`)
-  //         );
-  //       })
-  //       .then(() => {
-  //         res.redirect("/form/forms");
-  //       })
-  //       .catch((err) => console.log(err));
-  //   })
-  //   .catch((err) => console.log(err));
+  const userId = req.session.user.id;
+  let form_structure;
+  Form.findByPk(req.body.formNum)
+    .then((form) => {
+      form_structure = JSON.parse(form.form_structure);
+      const workbook = new ExcelJS.Workbook();
+      workbook.xlsx
+        .readFile(
+          path.join(
+            __dirname,
+            "../",
+            "data",
+            "excel",
+            `${req.body.formNum}.xlsx`
+          )
+        )
+        .then(() => {
+          const worksheet = workbook.getWorksheet("Sheet 1");
+          data = [userId];
+          for (i of form_structure) {
+            if (i.type == "upload") {
+              const file = req.files.find(
+                (file) => file.fieldname == i.question
+              );
+              console.log(req.files);
+              data.push(file.path);
+              continue;
+            }
+            data.push(req.body[i.question]);
+          }
+          worksheet.addRow(data);
+          return workbook.xlsx.writeFile(
+            path.join(
+              __dirname,
+              "../",
+              "data",
+              "excel",
+              `${req.body.formNum}.xlsx`
+            )
+          );
+        })
+        .then(() => {
+          res.redirect("/form/forms");
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
 };
 
 exports.getForms = (req, res, next) => {

@@ -5,7 +5,6 @@ const storage = multer.diskStorage({
     cb(null, "./data/files");
   },
   filename: function (req, file, cb) {
-    console.log(req.files);
     const uniqueSuffix =
       new Date().toISOString().replace(/:/g, "-") +
       "-" +
