@@ -104,10 +104,9 @@ exports.postSurvay = (req, res, next) => {
               );
               data.push({
                 text: "file",
-                hyperlink: file.path,
+                hyperlink: path.join(__dirname, "../", file.path),
                 tooltip: "clcik to open file",
               });
-              // { text: 'Google', hyperlink: 'https://www.google.com', tooltip: 'Click to visit Google' }
               continue;
             }
             data.push(req.body[i.question]);
