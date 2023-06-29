@@ -73,17 +73,17 @@ body {
 	text-align: left;
 	float: left;
 } */
-/* input[type="file"] {
+input[type="file"] {
 	font-size: 20px;
 	padding: 20px 0 0 0;
-} */
+}
 .center {
 	text-align: center;
 }
-/* a {
+a {
 	text-decoration: none;
 	font-size: 20px;
-} */
+}
 .hovering1:hover {
 	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
 		rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
