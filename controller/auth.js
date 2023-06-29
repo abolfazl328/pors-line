@@ -11,7 +11,8 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.getRegister = (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../", "views", "register.html"));
+  // res.sendFile(path.join(__dirname, "../", "views", "register.html"));
+  res.render("register", {});
 };
 
 exports.getEmailValidate = (req, res, next) => {
