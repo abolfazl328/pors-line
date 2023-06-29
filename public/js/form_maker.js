@@ -10,17 +10,17 @@ let uploadQuestion = document.querySelector("#upload-button");
 uploadQuestion.addEventListener("click", addUploadQuestion);
 
 function checkEmpty() {
-	let form = document.querySelector("#formTag");
-	if (form.childNodes.length !== 0) {
-		var btn = `<button type="submit" class="submit-btn" >انتشار</button>`;
-		document.querySelector("#enteshar").innerHTML = btn;
-	}
+  let form = document.querySelector("#formTag");
+  if (form.childNodes.length !== 0) {
+    var btn = `<button type="submit" class="submit-btn" >انتشار</button>`;
+    document.querySelector("#enteshar").innerHTML = btn;
+  }
 }
 function updateHiddenValue() {
-	document.querySelector("#hiddenInput").value = question_num;
+  document.querySelector("#hiddenInput").value = question_num;
 }
 function addTextQuestion() {
-	var element = `
+  var element = `
     <fieldset>
 		<legend>متنی با پاسخ کوتاه</legend>
         <div id="txt-question">
@@ -48,14 +48,14 @@ function addTextQuestion() {
         </div>
     </fieldset>
 `;
-	document.querySelector("#formTag").innerHTML += element;
-	question_num += 1;
-	checkEmpty();
-	updateHiddenValue();
+  document.querySelector("#formTag").innerHTML += element;
+  question_num += 1;
+  checkEmpty();
+  updateHiddenValue();
 }
 
 function addMultiQuestion() {
-	var element = `
+  var element = `
     <fieldset>
     <legend>چند گزینه ای</legend>
     <div id="multi-question">
@@ -118,14 +118,14 @@ function addMultiQuestion() {
     </div>
     </fieldset>`;
 
-	document.querySelector("#formTag").innerHTML += element;
-	question_num += 1;
-	checkEmpty();
-	updateHiddenValue();
+  document.querySelector("#formTag").innerHTML += element;
+  question_num += 1;
+  checkEmpty();
+  updateHiddenValue();
 }
 
 function addUploadQuestion() {
-	var element = `
+  var element = `
     <fieldset>
     <legend>آپلود فایل</legend>
     <div id="upload-question">
@@ -140,21 +140,21 @@ function addUploadQuestion() {
 required
             /><br /><br />
 
-            <form action="/action_page.php">
+          
                 <input
                     type="file"
                     id="ans${question_num}-upload"
                     name="ans${question_num}-upload"
                     disabled
                 /><br />
-            </form>
+           
         </div>
     </div>
     </div>
     </fieldset>`;
 
-	document.querySelector("#formTag").innerHTML += element;
-	question_num += 1;
-	checkEmpty();
-    updateHiddenValue();
+  document.querySelector("#formTag").innerHTML += element;
+  question_num += 1;
+  checkEmpty();
+  updateHiddenValue();
 }
