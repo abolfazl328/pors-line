@@ -12,6 +12,10 @@ const Forms = require("./models/form");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
 const csurf = require("csurf");
+const morgan = require("morgan");
+const compression = require("compression");
+const helmet = require("helmet");
+const fs = require("fs");
 
 dotenv.config();
 
@@ -33,6 +37,17 @@ const csrufProtectoin = csurf();
 
 app.set("view engine", "ejs");
 app.set("views", "views");
+
+const accessLogStram = fs.createWriteStream(
+  path.join(__dirname, "access.log"),
+  {
+    flags: "a",
+  }
+);
+
+app.use(helmet());
+app.use(compression());
+app.use(morgan("combined", { stream: accessLogStram }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -65,7 +80,8 @@ User.hasMany(Forms);
 
 sequelize
   .sync()
-  .then((result) => console.log(result))
+  .then((result) => {
+    console.log("connected");
+    app.listen(4000);
+  })
   .catch((err) => console.log(err));
-
-app.listen(4000);

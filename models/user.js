@@ -11,11 +11,11 @@ const User = sequelize.define("user", {
     unique: true,
   },
   email: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(90),
     allowNull: false,
     unique: true,
   },
-  password: { type: Sequelize.STRING, allowNull: false },
+  password: { type: Sequelize.STRING(90), allowNull: false },
 
   validation_code: {
     type: Sequelize.INTEGER,
@@ -26,7 +26,7 @@ const User = sequelize.define("user", {
     type: Sequelize.BOOLEAN,
     allowNull: false,
   },
-  resetToken: Sequelize.STRING,
+  resetToken: Sequelize.STRING(90),
   resetTokenExpiration: Sequelize.DATE(),
 });
 

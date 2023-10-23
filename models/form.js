@@ -10,10 +10,10 @@ const Form = sequelize.define("form", {
     autoIncrement: true,
   },
   name: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(90),
     allowNull: false,
   },
-  form_structure: Sequelize.JSON,
+  form_structure: Sequelize.TEXT("long"),
 });
 
 module.exports = Form;

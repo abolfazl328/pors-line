@@ -1,11 +1,10 @@
 node_modules
 
 .env
-
 .prettierignore
-
 data/excel/*.xlsx
-
 data/files/*.*
-
 !data/files/.gitkeep
+access.log
+.vscode/settings.json
+package-lock.json
